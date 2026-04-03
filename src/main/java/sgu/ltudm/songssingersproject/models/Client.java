@@ -8,10 +8,7 @@ import sgu.ltudm.songssingersproject.encryptions.AESEncryption;
 import sgu.ltudm.songssingersproject.encryptions.RSAEncryption;
 
 import javax.crypto.SecretKey;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.net.Socket;
 import java.security.KeyFactory;
 import java.security.KeyPair;
@@ -83,6 +80,11 @@ public class Client {
         }
 
         return ip;
+    }
+
+    public static void stop() throws IOException {
+        in.close();
+        out.close();
     }
 }
 
